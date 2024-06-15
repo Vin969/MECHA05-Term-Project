@@ -37,14 +37,6 @@ The fundamental idea of this project was to create a tendon-driven soft robotic 
 The tentacle’s main operation is compressing/ curling down as well as rotating at its base to emulate vertical and horizontal panning as done by an arm rotating about its elbow. Many designs of a continuum robot utilize equidistant tendons that are tensioned via some actuator to control movement (i.e. 4 tendons along a circular face controlled by servos at its base).
 
 
-                
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.jpg "image_tooltip")
-
-
 
 ### 
     Figure 1: Main assembly CAD of tentacle in Fusion 360
@@ -54,14 +46,6 @@ The design of this project sought out to only use one tensioning actuator in the
 
 
 The heart of the design centered on the links shown in figure 2 . These served as the robot’s
-
-
-        
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image2.jpg "image_tooltip")
 
 
 
@@ -78,13 +62,6 @@ The gripper’s design was rudimentary in its inception as well as execution. Th
 Other components of the design are visible in figure 1 displaying the full computer aided design (CAD) of the system. The horizontal panning motor was to be stationary and attached to a larger base that supported our PCB as well. It would drive a 1:1 gear train to avoid compressive axial loading on itself, and the driven gear was to support the base for the actual arm. On this higher base were the link/ gripper/ tubing assembly, as well as the second motor that controlled the spool of cord that tensioned the arm.
 
 
-        
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.jpg "image_tooltip")
-
 
 
 ### 
@@ -98,12 +75,6 @@ Upon actually building the robot (result shown in figure 4), we found that it co
 Describe the motors or other actuators used in your project, including their specifications and role in the overall system. The actuators selected for this project were two GM16 50RPM Metal 12V DC Geared Motor with quadrature rotary encoders and a FITEC FS90R Continuous Servo. The motors were selected due to their size and their stall current of 0.75A. These actuators were selected after our PCB was designed, so we were designing around a 2-2.4A operating range. In hindsight this was not the optimal order of design, as the PCB should support our electrical and mechanical needs, not the other way around. If we were to improve the design of this robot, we would’ve opted for position controlled servos as opposed to motors with encoders and continuous servos. Continuous motion proved to be detrimental during testing due to wires getting tangled up and damaging the physical components and how they were adhered onto the body of the robot. Using standard servos would’ve allowed us to control the tensioning of the robot in a much more logical way without the need for encoders.
 
 
-
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
 
 
 Figure 4: Physical robot featured in live demo
@@ -123,12 +94,6 @@ The PCB’s primary power features are a 12V Rail, a 5V rail, and a 3V3 internal
 
 <p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-
-![alt_text](images/image5.jpg "image_tooltip")
-
-
-
-### 
     Figure 5: PCB designed using Fusion 360
 
 
@@ -139,48 +104,11 @@ The motor driver was the most important peripheral on the board since the motion
 
 
 
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-
-![alt_text](images/image6.jpg "image_tooltip")
-
-
-
-### 
     Figure 6: Reverse polarity protection portion of schematic
 
 
 A primary lesson was how we should have designed this board initially. Reiterating a point from earlier, using servos instead of motors to tension the cords would have eliminated the need for a 12V rail, as most servos function at 4-6V. We could have still used a switching regulator if we so chose, and we could have experimented with stepping a 6V source to 5V for sensors and separately stepping the 6V rail to 3V3 (as opposed from the 5V rail). This would allow for better troubleshooting so all the power going to the mcu doesn’t rely on the power going to the sensors and vice versa.
-
-
-
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.jpg "image_tooltip")
-
-
-
-            Figure 7: 12V to 5V stepping portion of schematic
-
-
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image8.jpg "image_tooltip")
-
-
-
-            Figure 8: 5V to 3V3 stepping portion of schematic
-
-
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image9.jpg "image_tooltip")
-
 
 
     Figure 9: Physical circuit with all components placed sans the blown out MCU
@@ -236,12 +164,6 @@ A flowchart illustrating the basic structure and flow of the main file is shown 
     _The flowchart illustrates the initialization of hardware peripherals, the main control loop, and the integration of sensor data for motor control and feedback using the program eraser.io. The remaining flowcharts will be attached at the appendix._
 
 
-                
-
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image10.jpg "image_tooltip")
 
 
 
@@ -291,213 +213,3 @@ The BNO055 IMU sensor data, including orientation and system status, was read an
 
 
 Future improvements could focus on enhancing the filtering algorithms for the IMU sensor data to achieve more accurate and stable orientation feedback.
-
-5. **Appendix**
-    15. **Code Listing**
-
-A full code listing is provided in a ZIP file with our STM32CubeIDE project. The zip file contains the project created in the CubeIDE, and it includes our .ioc that sets up our STM32F411CEU6 for our peripherals and desired clock cycle. Also included in this project are all the source and header files discussed in section 3.
-
-    16. **Circuit Schematics**
-
-
-
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image11.png "image_tooltip")
-
-
-
-
-
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image12.png "image_tooltip")
-
-
-        7. **12V-5V Buck Switch Voltage Drop Calculations**
-* V<sub>drop </sub>= 12V - 5V = 7V
-* Ploss = Vout × Iout = 5V × 2A = 10W
-* Trise = Ploss × RJB
-* T<sub>rise </sub>= 10W × 99.29<sup>◦</sup>C/W = 892.9<sup>◦</sup>C
-        8. **5-3.3V LDO Regulator Drop Calculations**
-* V<sub>drop </sub>= 5V - 3.3V = 1.7V
-* P<sub>loss </sub>= V<sub>out </sub>× I<sub>out </sub>= 1.7V × 0.160A = 0.272W
-* Trise = Ploss × RJB
-* T<sub>rise </sub>= 0.272W × 100<sup>◦</sup>C/W = 27.2<sup>◦</sup>C
-        9. **Oscillator Calculations**
-* CL = 2 × CL - 2 × Cstray
-* C<sub>L </sub>= 2 × 6pF - 2 × 3pF
-* C<sub>L </sub>= 6pF
-        10. **Motor Driver Calculations**
-* V<sub>M </sub>= 4.5 - 13.5V
-* V<sub>CC </sub>= 2.7 - 5.5V
-* I<sub>OUT/ch</sub>: 1A
-* Temp = 20 - 85<sup>◦</sup>C
-    17. **Bill of Materials**
-
-**Part No.	Component	Type	Quantity	Supplier	Supplier Link**
-
-
-
-1. C7, C9	CAP, 1uF	3	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/tdk-corporation/C4532X7R1C336M250KC/1923413</span>
-2. C8, C10, C12	CAP, 10uF	4	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/GMC43X7R106K25NT/18151083</span>
-
-        ```
-RES, 10K
-RES, 5.1K
-RES, 10
-RES, 300K
-RES, 100K
-MCU
-USB
-MOT DRIVER
-JST, 2 PIN
-RES, 1K
-LED, RED
-LED, BLUE
-CAP, 0.1uF
-CAP, 16pF (15)
-MOT PFET
-JST, 4 PIN
-JST, 3 PIN
-JST, 20 PIN
-8MHZ OSC
-EVP SWITCH
-```
-
-
-1. R7, R12, R9, R106	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF2010FT10K0/1758376</span>
-2. R4, R82	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RK73B2HTTE512J/10393926</span>
-3. R13, R162	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/vishay-dale/CRCW201010R0FKEF/1173910</span>
-4. R51	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/vishay-dale/CRCW2010300KJNEF/1173894</span>
-5. R1, R2, R63	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/te-connectivity-passive-product/CRGCQ2010F100K/8576558</span>
-
-	91	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/stmicroelectronics/stm32f411ret6tr/7313108</span>
-
-	101	<span style="text-decoration:underline;">https://www.digikey.com/en/models/4312191</span>
-
-	111	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TB6612FNG-C-8-EL/1730070?s</span>=
-
-	122	<span style="text-decoration:underline;">https://www.digikey.com/en/models/2241777</span>
-
-	13 R31	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RK73B2HTTE102J/10393884</span>
-
-	141	<span style="text-decoration:underline;">https://www.digikey.com/en/models/14555739</span>
-
-	151	<span style="text-decoration:underline;">https://www.digikey.com/en/models/4489933</span>
-
-
-
-1. C11, C16, C13	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/CHV1812N500104MXT/22238716</span>
-2. C14, C152	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/knowles-syfer/1812Y3K00150JCT/6475626</span>
-
-	181	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/diodes-incorporated/DMG3415UFY4Q-7/5970445</span>
-
-	196	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/jst-sales-america-inc/B4B-PH-SM4-TB/926643</span>
-
-	204	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM03B-XASS-TF/1634764</span>
-
-	211	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/sullins-connector-solutions/NPPC102KFMS-RC/776178</span>
-
-	221	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/ecs-inc/ECS-80-18-30-JGN-TR/5875530</span>
-
-	231	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/panasonic-electronic-components/EVP-ASAC1A/4930557?s=N4IgTC</span>
-
-
-```
-12V PFET
-ZENER DIODE
-BUCK SWITCH
-CAP, 22uF
-Inductor, 6.8mH
-0.47uF
-LDO 5-3.3V
-CAP, 4.7uF
-```
-
-
-	251	<span style="text-decoration:underline;">https://www.digikey.com/en/models/3770033</span>
-
-	261	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/cmz15-te12l-q-m/7809461</span>
-
-	271	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/analog-devices-inc/adp2302ardz-5-0-r7/2606527</span>
-
-	28 C2, C52	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/yageo/CC1812JKNPOEBN220/5884816</span>
-
-	291	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/tdk-corporation/mlz2012n6r8lt000/2523499</span>
-
-	30 C3, C42	<span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/tdk-corporation/C4532X7R2E474K230KA/789693</span>
-
-
-        311 <span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/diodes-incorporated/AP7315Q-33W5-7/10294930?s=N4IgTCBcDaIII</span>A 3 C61 <span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/kemet/C1812C475M5RAC7800/2235866</span>
-
-
-
-1. BN0055 IMU	1
-2. FSR	2
-
-	37	MOTORS	2
-
-
-                                <span style="text-decoration:underline;">https://www.digikey.com/en/products/detail/adafruit-industries-llc/2472/5699182</span>
-
-	32	SERVO	2	<span style="text-decoration:underline;">https://www.amazon.com/Dorhea-Arduino-Helicopter-Airplane-Walking/dp/B07Q6JGWNV/ref=sr_1_7?sr=8-7</span>
-
-
-
-1. Glove Pair	1	<span style="text-decoration:underline;">https://www.amazon.com/TRENDOUX-Winter-Texting-Smartphone-Driving/dp/B07JYJM6JT/ref=sr_1_5?sr=8-5</span>
-2. Wires	1	<span style="text-decoration:underline;">https://www.amazon.com/Elegoo-EL-CP-004-Multicolored-Breadboard-arduino/dp/B01EV70C78/ref=sr_1_3?sr=8</span>-
-
-	24	XT30PW-M	1	[https://www.amazon.com/Amass-XT30PW-Upgrade-Connectors-Battery/dp/B099F2PXYN/ref=sr_1_1?sr=8-1](https://www.amazon.com/Amass-XT30PW-Upgrade-Connectors-Battery/dp/B099F2PXYN/ref=sr_1_1?sr=8-1)
-
-
-
-    18. **Flowcharts**
-
-                
-
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image13.jpg "image_tooltip")
-
-
-
-                Figure 11: Flowchart of motor driver.c
-
-
-
-
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image14.jpg "image_tooltip")
-
-
-
-                Figure 12: Flowchart of fsr controller.c
-
-
-
-<p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image15.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image15.jpg "image_tooltip")
-
-
-
-                    Figure 13: Flowchart of bno055.c
-
-
-        
-
-<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image16.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image16.png "image_tooltip")
-
-
-
-        Figure 14: Flowchart of receiver.c
